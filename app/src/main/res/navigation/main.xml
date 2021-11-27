@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/MovieListingFragment">
+
+    <fragment
+        android:id="@+id/MovieListingFragment"
+        android:name="com.example.TentwentAssignment.ui.movie.fragments.MovieListingFragment"
+        android:label="fragment_movies"
+        tools:layout="@layout/fragment_movie_listing">
+
+        <action
+            android:id="@+id/action_MovieListingFragment_to_MovieDetailFragment"
+            app:destination="@id/MovieDetailFragment" />
+        <action
+            android:id="@+id/action_MovieListingFragment_to_MovieBookFragment"
+            app:destination="@id/MovieBookFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MovieDetailFragment"
+        android:name="com.example.TentwentAssignment.ui.movie.fragments.MovieDetailFragment"
+        android:label="fragment_movie_details"
+        tools:layout="@layout/fragment_movie_detail">
+
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_MovieDetailFragment_to_MovieWatchFragment"
+            app:destination="@id/MovieWatchFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/MovieBookFragment"
+        android:name="com.example.TentwentAssignment.ui.movie.fragments.MovieBookFragment"
+        android:label="fragment_movie_book"
+        tools:layout="@layout/fragment_movie_book">
+
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MovieWatchFragment"
+        android:name="com.example.TentwentAssignment.ui.movie.fragments.MovieWatchFragment"
+        android:label="activity_watch_movie"
+        tools:layout="@layout/fragment_watch_movie">
+        <argument
+            android:name="movieId"
+            app:argType="integer" />
+
+    </fragment>
+
+
+</navigation>
